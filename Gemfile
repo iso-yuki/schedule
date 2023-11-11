@@ -65,3 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'simple_calendar', '~> 2.0'
+
+gem "dartsass-rails", "~> 0.5.0"
