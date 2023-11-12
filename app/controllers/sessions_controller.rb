@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:session][:name])
-    # redirect_to calendars_path, notice: 'ログインしました。'
     if user&.authenticate(params[:session][:password])
       log_in user
       redirect_to calendars_path, notice: 'ログインしました。'
