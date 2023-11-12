@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :calendars
-  root 'calendars#index'
+# <<<<<<< HEAD
+  # root 'calendars#index'
 
+# =======
+#   root 'blogs#index'
+# >>>>>>> calendars/master
   resources :blogs
+  root 'sessions#new'
+  
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

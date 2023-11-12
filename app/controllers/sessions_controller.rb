@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     if user&.authenticate(params[:session][:password])
       log_in user
-      redirect_to calendars_path, notice: 'ログインしました。'
+      redirect_to blogs_path, notice: 'ログインしました。'
     else
       flash.now[:alert] = '入力が正しくありません。'
       render 'new'

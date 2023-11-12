@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2023_11_12_002451) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
     t.text "content"
-    t.datetime "starttime"
+    t.datetime "start_time"
   end
 
   create_table "calendars", force: :cascade do |t|
