@@ -1,5 +1,11 @@
 <h1>Login</h1>
 
+<%= notice %>
+<div class="alert alert-danger">
+  <%= flash[:alert] %>
+</div>
+
+
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :blogs
 
   get 'login', to: 'sessions#new'
+  get 'home', to: 'sessions#home'
+  get 'signup', to: 'sessions#signup'
+  # post 'signup', to: 'sessions#signup'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 end
