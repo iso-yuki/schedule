@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="blogs.scss">
+
 <h1>TaskLink</h1>
 <p id="notice"><%= notice %></p>
 <table>
@@ -22,31 +24,47 @@
 </table>
 <br>
 <%= link_to '予定・課題の追加', new_blog_path %>
-<%= month_calendar events: @blogs do |date, blogs| %>
-  <%= date.day %>
-  <% blogs.each do |blog| %>
-    <div>
-      <%= link_to blog.content, blog %>
-      <input type="checkbox" id="scales" name="scales" checked />
-    </div>
-  <% end %>
-<% end %>
 
-<div class="text text03">
-  <%= calendar number_of_days: 1, events:  @blogs do |date, blogs| %>
- 
-    <div class="title is-5"> 
-    <%= date.day %>
-    </div>
-
-    <% blogs.each do |blog| %>
-      <div>
-        <%= link_to blog.title, blog %>
-        <%= link_to blog.start_time, blog %>
-        <%= link_to blog.content, blog %>
-        <input type="checkbox" id="scales" name="scales" checked />
-      </div>
+<div class="calendarbox">
+  <div class="monthcalendar">
+    <%= month_calendar events: @blogs do |date, blogs| %>
+      <%= date.day %>
+      <% blogs.each do |blog| %>
+        <div>
+          <%= blog.content %>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+
+  <div class="weekcalendar">
+    <%= calendar number_of_days: 1, events:  @blogs do |date, blogs| %>
   
-  <% end %>
+      <div class="title is-5"> 
+        <h3><%= date.day %>日の予定</h3>
+      </div>
+
+      <% blogs.each do |blog| %>
+        <div>
+          <%= blog.start_time %>
+          <%= link_to blog.title, blog %>
+        </div>
+      <% end %>
+
+      <div class="title is-5"> 
+        <h3><%= date.day %>日の課題</h3>
+      </div>
+
+      <% blogs.each do |blog| %>
+        <div class="homework">
+          <li>
+            <%= blog.title %>
+            <%= blog.content %>
+            <input type="checkbox" id="scales" name="scales" />
+          </li>
+        </div>
+      <% end %>
+    
+    <% end %>
+  </div>
 </div>
