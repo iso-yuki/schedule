@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_11_120158) do
+ActiveRecord::Schema.define(version: 2023_11_12_002451) do
 
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.integer "blob_id", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 2023_11_11_120158) do
     t.string "homework"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "password_digest"
   end
 
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
