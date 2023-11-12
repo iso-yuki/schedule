@@ -2,3 +2,29 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+body{
+  background-color: #F5FFFA;
+}
+
+.weekcalendar{
+ margin-left: 10px;
+ background-color: white;
+}
+
+.monthcalendar{
+ width: 80%;
+ background-color: white;
+}
+
+.calendarbox{
+  display: flex;
+}
+
+.title is-5{
+  text-align: center;
+}
+
+.homework{
+  list-style: none;
+}
