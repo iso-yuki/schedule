@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :calendars
-  root 'calendars#index'
+  root 'blogs#index'
   resources :blogs
 end

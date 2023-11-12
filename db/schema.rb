@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_11_120158) do
+ActiveRecord::Schema.define(version: 2023_11_12_001128) do
 
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.integer "blob_id", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2023_11_11_120158) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
     t.text "content"
-    t.datetime "starttime"
+    t.datetime "start_time"
   end
 
   create_table "calendars", force: :cascade do |t|
