@@ -31,3 +31,22 @@
     </div>
   <% end %>
 <% end %>
+
+<div class="text text03">
+  <%= calendar number_of_days: 1, events:  @blogs do |date, blogs| %>
+ 
+    <div class="title is-5"> 
+    <%= date.day %>
+    </div>
+
+    <% blogs.each do |blog| %>
+      <div>
+        <%= link_to blog.title, blog %>
+        <%= link_to blog.start_time, blog %>
+        <%= link_to blog.content, blog %>
+        <input type="checkbox" id="scales" name="scales" checked />
+      </div>
+    <% end %>
+  
+  <% end %>
+</div>
