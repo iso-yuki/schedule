@@ -1,19 +1,35 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+  <div class="title">
+    <%= form.label :科目 %>
+    <%= form.text_field :title %>
+  </div>
+    <div class="time">
+    <%= form.label :開始時間 %>
+    <%= form.datetime_select :start_time %>
+  </div>
+  <div class="content">
+    <%= form.label :課題 %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="submit">
+    <%= form.submit "登録" %>
+  </div>
+<% end %>
+12:19
+Blog new↑ （編集済み） 
+12:19
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>タイトル</strong>
-  <%= @blog.title %>
+<strong>科目</strong>
+<%= @blog.title %>
 </p>
-
 <p>
-  <strong>時間</strong>
-  <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
+<strong>時間</strong>
+<%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
 </p>
-
 <p>
-  <strong>内容</strong>
-  <%= @blog.content %>
+<strong>課題</strong>
+<%= @blog.content %>
 </p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<%= link_to '編集', edit_blog_path(@blog) %>
+<%= link_to '戻る', blogs_path %>
